@@ -1,20 +1,14 @@
 import './App.css';
-import Addition from './components/Addition';
-
-// import Welcome from './components/Welcome';
-// import CompOne from './components/CompOne';
+import AdditionComp1 from './components/AdditionComp1';
 
 function App() {
   return (
-    // <body className='main'>
-     <div className='App' >
-      
-        {/* <Welcome/> */ }
-        {/* <CompOne/>  */}
-        <Addition />
+    
+    <div className='App' >
+
+        <AdditionComp1/>
 
     </div>
-    // </body>
   );
 }
 

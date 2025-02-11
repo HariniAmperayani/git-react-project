@@ -7,7 +7,7 @@ function Welcome()
 {
     const username = 'HariniMadan';
     const contactNo = '9876543210';
-    const aboutUs = 'We are H&M'
+    const aboutUs = 'We are H&M';
     
     return(
         <div>

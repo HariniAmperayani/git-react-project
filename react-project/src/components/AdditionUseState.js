@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Addition()
+function AdditionUseState()
 {
     console.log("The addition component is called");
 
@@ -32,14 +32,15 @@ function Addition()
                 <input type='text' id='textbox2' placeholder= 'Enter the second number'/>
             </div>
 
-            <button id='button1' onClick={add}> Add</button>
+            <button id='addbutton' onClick={add}> Add</button>
 
             <div>
                 <input type='text' id='textbox3' placeholder='Result' value={num3}/>
             </div>
+           
         </div>
         </>
     );
 }
 
-export default Addition;
+export default AdditionUseState;
