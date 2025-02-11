@@ -11,7 +11,7 @@ function Addition()
         var num1 = document.getElementById('textbox1').value;
         var num2 = document.getElementById('textbox2').value;
     
-        console.log("The add button is clicked"); 
+        console.log("The add button is clicked-update"); 
         
         num3 = parseInt(num1) + parseInt(num2);
         
