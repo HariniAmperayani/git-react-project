@@ -24,7 +24,7 @@ function AdditionUseState()
     return(
         <>
         <div>
-            <h3> Addition of two numbers</h3>
+            <h3> Addition of two numbers using UseState</h3>
 
             <div>
                 <input type='text' id='textbox1' placeholder= 'Enter the first number'/>

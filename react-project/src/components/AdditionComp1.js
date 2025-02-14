@@ -1,40 +1,35 @@
 import React from 'react';
-import AdditionComp2 from './AdditionComp2';
+import {connect} from 'react-redux';
 
-function AdditionComp1()
+function AdditionComp1(props)
 {
 
-    let [c, setC] = React.useState('');
+    console.log(" The comp1 props are", props);
 
-    alert(" The AdditionComp1 component is called");
-
-    function add1()
+    function sum()
     {
-        var a = document.getElementById('box1').value;
-        var b = document.getElementById('box2').value;  
+        var num1 = document.getElementById('textbox1').value;
+        var num2 = document.getElementById('textbox2').value;  
         alert('The button is clicked')
         
-        c = parseInt(a) + parseInt(b);
-        alert('The sum is ' + c);
+        var num3 = parseInt(num1) + parseInt(num2);
+        alert('The sum is ' + num3);
 
-        setC(c);
+        props.dispatch({type :'test', compSum : num3});
     }
 
     return(
         <>
         <h3>Addition of two numbers via two components</h3>
         <div>
-            <input text='textbox' id='box1' placeholder='Enter first number'/>
+            <input text='textbox' id='textbox1' placeholder='Enter first number'/>
             <span> + </span>
-            <input text='textbox' id='box2' placeholder='Enter second number'/>
+            <input text='textbox' id='textbox2' placeholder='Enter second number'/>
         </div>
 
-        <button id='add' onClick={add1}>Add</button>
-
-        <AdditionComp2 c={c}/>
-
+        <button id='add' onClick={sum}>Add</button>
         </>
     );
 }
 
-export default AdditionComp1;
+export default connect()(AdditionComp1);
