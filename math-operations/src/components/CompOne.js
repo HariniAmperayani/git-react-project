@@ -4,7 +4,6 @@ function CompOne()
 {
 console.log("compone called")
     
-    // let inc = 0;
     const [inc,setInc] = useState(0);
     
     function funinc()

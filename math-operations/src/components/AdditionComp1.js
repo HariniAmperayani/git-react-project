@@ -22,9 +22,9 @@ function AdditionComp1(props)
         <>
         <h3>Addition of two numbers via two components</h3>
         <div>
-            <input text='textbox' id='textbox1' placeholder='Enter first number'/>
+            <input text='text' id='textbox1' placeholder='Enter first number'/>
             <span> + </span>
-            <input text='textbox' id='textbox2' placeholder='Enter second number'/>
+            <input text='text' id='textbox2' placeholder='Enter second number'/>
         </div>
 
         <button id='add' onClick={sum}>Add</button>
