@@ -7,9 +7,9 @@ function Users()
     console.log(userData);
     console.log("Number of users: " + userData.length);
 
-       function getUserDetails()
+       function getUserInfo()
        {
-        console.log("getUserDetails called");
+        console.log("getUserInfo is called");
 
         var array=[];
 
@@ -23,6 +23,7 @@ function Users()
             <td>{userData[i].Gender}</td>
             <td>{userData[i].Age}</td>
             <td>{userData[i].Country}</td>
+            {/* <td><a href='http://localhost:3000/users/details' target='blank'>more...</a></td> */}
             </tr>
             </>  );
             
@@ -48,9 +49,10 @@ function Users()
                             <th>Country</th>
                         </tr>
                         </thead>
-                        <tbody>{getUserDetails()}</tbody>                                            
+                        <tbody>{getUserInfo()}</tbody>                                            
                     </table>
-                    </div>       
+                    </div>    
+                    <a href='http://localhost:3000/users/users-details' target='blank'>more details...</a>   
                 </div>    
             </div>
        </div>

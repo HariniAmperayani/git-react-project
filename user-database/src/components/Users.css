@@ -4,3 +4,14 @@
     
 }
 
+li
+{
+    list-style-type: none;
+}
+
+a:link
+{
+    float: right;
+    text-decoration: none;
+    color : blue;
+}
