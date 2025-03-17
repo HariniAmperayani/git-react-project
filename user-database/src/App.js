@@ -1,11 +1,13 @@
 import './App.css';
 
-import Users from './components/Users';
+import MainContainer from './components/MainContainer';
+import NavBar from './common/NavBar';
 
 function App() {
   return (
     <div className="App">
-       <Users/>
+      <MainContainer/>
+      <NavBar/>
     </div>
   );
 }
