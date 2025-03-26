@@ -1,7 +1,7 @@
-.container-fluid
+.container-fluid.custom-users-container
 {
-    background-color: light-blue !important; 
-    
+    background: linear-gradient(to right, #E4F0DA, #C9E2CB);
+    min-height : 100vh;
 }
 
 li
@@ -9,9 +9,14 @@ li
     list-style-type: none;
 }
 
-a:link
+.custom-users-button
 {
-    float: right;
-    text-decoration: none;
+    border: none;
+    background-color: white;
+
+}
+.bi-info-circle.custom-iIcon
+{
     color : blue;
+    float : left;
 }

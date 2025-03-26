@@ -1,9 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Users.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import userData from '../Data/user-data';
 
 function Users()
 {
+    
+    const navigate = useNavigate();
+    
     console.log(userData);
     console.log("Number of users: " + userData.length);
 
@@ -23,7 +28,17 @@ function Users()
             <td>{userData[i].Gender}</td>
             <td>{userData[i].Age}</td>
             <td>{userData[i].Country}</td>
-            {/* <td><a href='http://localhost:3000/users/details' target='blank'>more...</a></td> */}
+
+            <td>
+                <button className="custom-users-button" onClick ={() => navigate(`/users/individual-users?id=${i}`)}>
+                <i className='bi bi-info-circle custom-iIcon'></i>
+                </button>
+            </td>
+
+            { /* To dynamically generate links for navigation in the rendered UI. */
+            /* <td><a href={`http://localhost:3000/users/individual-users?id=${i}`} 
+            target='_top'><i className='bi bi-info-circle custom-iIcon'></i></a></td> */}
+
             </tr>
             </>  );
             
@@ -34,12 +49,12 @@ function Users()
        }
 
         return (
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+        <div className="container-fluid custom-users-container">
+            <div className="row custom-row">
+                <div className="col-lg-12">
                     <h3>Users</h3> 
-                    <div class="table">
-                    <table class="table table-condensed">
+                    <div className="table">
+                    <table className="table table-condensed">
                         <thead>
                         <tr>
                             <th>Firstname</th>
@@ -47,12 +62,12 @@ function Users()
                             <th>Gender</th>
                             <th>Age</th>
                             <th>Country</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>{getUserInfo()}</tbody>                                            
                     </table>
-                    </div>    
-                    <a href='http://localhost:3000/users/users-details' target='blank'>more details...</a>   
+                    </div>       
                 </div>    
             </div>
        </div>
