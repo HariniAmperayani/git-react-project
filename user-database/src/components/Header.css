@@ -1,0 +1,38 @@
+.container-fluid.custom-homepage-container
+{
+    background: black;
+    padding: 0px;
+}
+
+#custom-navlist
+{
+    margin : 10px;
+}
+
+
+#custom-navitems
+{
+    color : white;
+}
+
+a:hover
+{
+    text-decoration : underline;
+    text-decoration-color : green;
+}
+
+#custom-title
+{
+    margin-left : 20px;
+    color : white;
+    font-size: 30px;
+}
+
+#custom-auth-buttons
+{
+    margin : 30px;
+    background-color: black;
+    border: 2px solid green;
+    color : white;
+    padding : 5px 10px;
+}

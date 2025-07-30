@@ -6,11 +6,30 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import {BrowserRouter} from 'react-router-dom';
 
+import { Auth0Provider } from '@auth0/auth0-react';
+import getConfig from './config';
+
+
+const config = getConfig();
+
+const providerConfig ={
+  domain : config.domain,
+  clientId : config.clientId,
+  authorizationParams: {
+  redirect_uri: config.redirectUri,
+    ...(config.audience ? { audience: config.audience } : null),
+  },
+};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-       <App />
+        <Auth0Provider
+          {...providerConfig}
+        >
+            <App />
+        </Auth0Provider>,
     </BrowserRouter>  
   </React.StrictMode>
 );

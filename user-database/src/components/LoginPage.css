@@ -1,0 +1,50 @@
+.container-fluid.custom-loginpage-container
+{
+    background: white;
+    padding : 0px;
+    min-height: 100vh;
+}                       
+
+#login-page-header
+{
+    width : 100%;
+    padding: 10px;
+    margin : 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-weight: bold;
+    color: #b7d1b9;
+
+}
+.col-xl-4.custom-loginpage-col
+{
+    margin-top : 30px;
+    border : 1px solid white;
+    background: #C9E2CB;
+
+}
+
+#username
+{
+    margin-top : 30px;
+
+}
+
+#password
+{
+    margin : 10px;
+
+
+}
+.form-control-sm.custom-loginpage-textfield
+{
+    border : none;
+}
+
+#buttonId
+{
+    background: white;   
+    border: none;
+    margin : 20px;
+    padding : 7px;
+}

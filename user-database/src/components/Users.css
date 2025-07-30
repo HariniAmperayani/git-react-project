@@ -1,9 +1,7 @@
 .container-fluid.custom-users-container
 {
-    background: linear-gradient(to right, #E4F0DA, #C9E2CB);
-    min-height : 100vh;
+    background: black;
 }
-
 li
 {
     list-style-type: none;

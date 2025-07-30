@@ -3,10 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import './Users.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import userData from '../Data/user-data';
+import Header from './Header';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function Users()
 {
     
+    const { isAuthenticated } = useAuth0();
+
     const navigate = useNavigate();
     
     console.log(userData);
@@ -48,29 +52,43 @@ function Users()
          
        }
 
-        return (
-        <div className="container-fluid custom-users-container">
-            <div className="row custom-row">
-                <div className="col-lg-12">
-                    <h3>Users</h3> 
-                    <div className="table">
-                    <table className="table table-condensed">
-                        <thead>
-                        <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Gender</th>
-                            <th>Age</th>
-                            <th>Country</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>{getUserInfo()}</tbody>                                            
-                    </table>
-                    </div>       
-                </div>    
-            </div>
-       </div>
+       return (
+        <>
+            {isAuthenticated && (
+                <div className="container-fluid custom-users-container">
+                    <Header />
+                    <div className="row custom-row">
+                        <div className="col-lg-12">
+                            <h3>Users</h3>
+                            <div className="table">
+                                <table className="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Firstname</th>
+                                            <th>Lastname</th>
+                                            <th>Gender</th>
+                                            <th>Age</th>
+                                            <th>Country</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>{getUserInfo()}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {!isAuthenticated && (
+
+                <h4>
+                    <h4>Access Denied</h4>
+                    <p>You need to log in to view this page. Please <a href="/">Login</a> to continue.</p>
+                </h4>
+            
+            )}
+        </>
     );
 }
 export default Users;
