@@ -1,0 +1,118 @@
+.new-recipe-form{
+    font-family: 'Inter', sans-serif;
+    font-size : 13px;
+}
+
+#form-headline{
+    font-size : 15px;
+    font-weight : 500;
+    margin-left: 300px;
+}
+
+#form-content{
+    display : flex;
+}
+
+label{
+    font-weight: 500;
+    font-size: 13px;
+    color :black
+}
+
+input[type='text'] {     
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  /* outline: none; */
+  /* box-shadow: none; */
+  border-radius: 0;
+  padding: 4px 0;
+  font-size: 13px;
+}
+
+input[type='text']:focus{
+
+  background-color:#f9f9f9;
+  border-bottom: 1px solid black;
+  outline: none;
+  box-shadow: none;
+} 
+
+.form-fields{
+    margin: 25px 0 20px 10px;
+}
+
+#new-recipe-title {
+    align-items: center;
+    gap:10px;
+    
+}
+
+#new-recipe-image {
+    display : flex;
+    align-items: center;
+    gap:10px;
+}
+
+#new-recipe-cuisine{
+    align-items: center;
+    gap:10px;
+
+}
+
+#new-recipe-servings-preptime-cooktime{
+    display : flex;
+    max-width : 500px;
+    align-items: center;
+}
+
+#new-recipe-servings{
+    align-items: center;
+    gap:10px;
+
+}
+
+#new-recipe-preptime{
+    align-items: center;
+
+}
+
+#new-recipe-cooktime{
+    display: flex;
+    align-items: center;
+}
+
+/* #new-recipe-ingredients {
+    display: flex;  
+
+} */
+
+#instructions{
+  border: 1px solid black !important;
+  border-radius: 4px !important;
+  width : 100%;
+  max-width: 600px;
+  height: 400px;
+  padding: 10px;
+  background : transparent;
+  /* resize: vertical; */
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+}
+
+#new-recipe-servewith-visibility{
+    display: flex;
+}
+#new-recipe-servewith {
+    align-items: center;
+    
+}
+
+#new-recipe-visibility
+{
+    display: flex;
+}
+
+#new-recipe-visibility-options{
+    display : flex;
+}

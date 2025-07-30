@@ -1,0 +1,72 @@
+.container-fluid.cookbook-dashboard{
+    background-color: white;
+    border: 1px solid green;
+    height : 100vh;
+    
+}
+.dashboard-header{
+    display:flex;
+    justify-content: space-between;
+    padding : 10px;
+}
+
+.navbar-brand.dashboard-navbar-brand{
+    font-size:20px;
+    color: green;
+    font-weight: 500;
+}
+
+.navbar-brand.dashboard-navbar-brand:hover{
+    color: green !important;
+    text-decoration: none;
+}
+
+.navbar-nav.dashboard-navbar-nav {
+    list-style-type: none;
+    margin-left: 90px;
+}
+
+.nav-item.dashboard-item{
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.nav-link.dashboard-nav-link {
+    color : green !important; 
+}
+
+.nav-link.dashboard-nav-link:hover{
+    color: green !important;
+    text-decoration: underline green !important;
+    
+}
+
+#dashboard-logout-button{
+    background-color: white;
+    color : green;
+    border : 2px solid green;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top : 10px;
+    margin-right : 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#dashboard-logout-button:hover{
+    background-color: green;
+    color : white;
+}
+
+#dashboard-welcome-message{
+    font-size:20px;
+    color:green;
+    font-weight: 450;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin-top: 140px;
+}

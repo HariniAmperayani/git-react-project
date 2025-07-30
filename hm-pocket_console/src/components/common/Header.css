@@ -1,0 +1,60 @@
+.homepage-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+
+}
+
+.homepage-header * {
+  color: black;
+}
+
+#homepage-left-section{
+    display: flex;
+    align-items: center;
+}
+
+#homepage-right-section{
+    padding : 0px 10px;
+}
+
+.navbar-brand{
+    font-size:20px;
+    font-weight : 500;
+}
+.navbar-brand:focus, .navbar-brand:hover {
+    color: black !important;
+      
+}
+
+.navbar-nav ul {
+    list-style-type: none;
+    
+}
+
+.nav-item{
+   font-size: 15px;
+   font-weight: 450;
+}
+.navbar-nav .nav-link:hover{
+    color : black !important;
+    text-decoration: underline green;
+}
+
+#homepage-login-button, #homepage-logout-button{
+    background-color: #fdfdfd;
+    color: black;
+    font-size : 15px;
+    font-weight:500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid green;
+    cursor: pointer;
+}
+
+#homepage-login-button:hover, #homepage-logout-button:hover{
+    background-color: green;
+    color: #fdfdfd;
+}
