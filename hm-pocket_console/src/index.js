@@ -24,7 +24,7 @@ root.render(
       domain = {config.domain}
       clientId = {config.clientId}
       authorizationParams={{ 
-        redirect_uri: window.location.origin + window.location.pathname,
+        redirect_uri: window.location.origin + "/cookbook/dashboard",
         audience : config.audience}}
       
     >

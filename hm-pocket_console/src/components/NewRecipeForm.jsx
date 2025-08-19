@@ -2,11 +2,13 @@ import {React, useState} from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import './NewRecipeForm.css'; 
 import ValidateRecipeForm from './ValidateRecipeForm.js'; 
+import { useNavigate } from 'react-router-dom';
 
 function NewRecipeForm()
 {
     
     const { getAccessTokenSilently } = useAuth0();
+    const navigate = useNavigate();
 
     // State variables to hold the values of the form fields
 
@@ -23,50 +25,81 @@ function NewRecipeForm()
 
     // State variable to hold error messages
     const [errors, setErrors] = useState({}); 
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState();
+
+    const handleCancel = () => {
+        navigate('/cookbook/dashboard');
+    }
 
     // This function will be called when the form is submitted
     async function handleSave(submitE)
     {
         submitE.preventDefault(); // stops page reload
        
-        const formData = { title, image, cuisine, prepTime, cookTime, servings, 
+        const RecipeFormData = { title, image, cuisine, prepTime, cookTime, servings, 
                            ingredients, instructions, serveWith, visibility };
 
-        const formErrors = ValidateRecipeForm(formData);
-        setErrors(formErrors);
+        const RecipeFormErrors = ValidateRecipeForm(RecipeFormData);
+        setErrors(RecipeFormErrors);
 
-        if (Object.keys(formErrors).length > 0) return; // stop submission if errors
+        if (Object.keys(RecipeFormErrors).length > 0) return; // stop submission if errors
 
-        // send the recipeData to our backend or save it in state
-
-        const recipeData = {
-            title: title,
-            image: image,
-            cuisine: cuisine,
-            prepTime: prepTime,
-            cookTime: cookTime,
-            servings: servings,
-            ingredients: ingredients,
-            instructions: instructions,
-            serveWith: serveWith,
-            visibility: visibility
-        };
-
-        console.log('RecipeData JSON:', JSON.stringify(recipeData));
-
+        
         const token = await getAccessTokenSilently({
-            audience: 'https://hm-cookbook.com/api', 
-            scope: 'read:current_user'
-        });
+                 audience: 'https://hm-cookbook.com/api', 
+                 scope: 'read:current_user'
+            });
 
-        fetch('http://localhost:4000/api/recipes', { //the backend URL
+        // Create FormData for file upload. FormData is used to send files and other data in a single request
+        const formDataForUpload = new FormData(); 
+        
+        formDataForUpload.append('title', title);
+        formDataForUpload.append('image', image);
+        formDataForUpload.append('cuisine', cuisine);
+        formDataForUpload.append('prepTime', prepTime);
+        formDataForUpload.append('cookTime', cookTime);
+        formDataForUpload.append('servings', servings);
+        formDataForUpload.append('ingredients', ingredients);
+        formDataForUpload.append('instructions', instructions);
+        formDataForUpload.append('serveWith', serveWith);
+        formDataForUpload.append('visibility', visibility);
+
+        fetch('https://localhost:4000/api/recipes', { //the backend URL
             method: 'POST', // specifies that we are sending data to the server
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}, //tells the backend that we’re sending JSON format
-            body: JSON.stringify(recipeData) // Converts the recipeData object to a JSON string
+            headers: { 'Authorization': `Bearer ${token}`}, //tells the backend that we’re sending JSON format
+            body: formDataForUpload //sends FormData instead of JSON
+            
         })
 
         .then( (response) => response.json() ) //converts response object to JSON
-        .then( (data) => { console.log ('Your recipe is saved successfully:', data); } )
+        .then( (data) => { 
+
+            console.log ('Your recipe is saved successfully:', data); 
+
+            // Show success message
+            setSuccessMessage('Your recipe is saved successfully!');
+
+            //Show error message if there is an error
+            setErrorMessage('Error while saving recipe. Please try again later.');
+
+            // Clear form inputs
+            setTitle('');
+            setImage('');
+            setCuisine('');
+            setPrepTime('');
+            setCookTime('');
+            setServings('');
+            setIngredients([]);
+            setInstructions('');
+            setServeWith('');
+            setVisibility('private');
+            setErrors({});
+        
+            setTimeout(() => setSuccessMessage(''), 5000); // Clear success message after 5 seconds
+           
+        
+        } )
         .catch( (err) => { console.error ('Error while saving recipe:', err); })
         
     };
@@ -74,6 +107,13 @@ function NewRecipeForm()
     return(
         
         <div className='container-fluid new-recipe'>
+
+            {successMessage && (
+                    <div className='toast-success'> {successMessage} </div>  )}
+
+            {errorMessage && (
+                    <div className= 'toast-error'> {errorMessage} </div>  )}
+
             <form className='new-recipe-form' onSubmit={handleSave}>
                     
                 <div id='form-headline'>New Recipe</div>
@@ -181,13 +221,13 @@ function NewRecipeForm()
                             <label htmlFor='Visibility'>Visibility</label>
                             <div id='new-recipe-visibility-options'>
 
-                                <div><input type="radio" id="public" name="visibility" value="public"
-                                    checked={visibility === "public"}
+                                <div id='accesstype_public'><input type="radio" id="public" name="visibility" 
+                                    value="public" checked={visibility === "public"}                                 
                                     onChange={(inputE) => setVisibility(inputE.target.value)}
                                 /><label htmlFor="public">Public</label></div>
 
-                                <div><input type="radio" id="private" name="visibility" value="private"
-                                    checked={visibility === "private"}
+                                <div id='accesstype_private'><input type="radio" id="private" name="visibility" 
+                                    value="private" checked={visibility === "private"}
                                     onChange={(inputE) => setVisibility(inputE.target.value)}
                                 /><label htmlFor="private">Private</label></div>
                             </div>
@@ -211,6 +251,7 @@ function NewRecipeForm()
                             {errors.instructions && <div className="text-danger">{errors.instructions}</div>}
                         </div>
 
+                        <button type='submit' id='new-recipe-cancel-button' onClick ={handleCancel}>Cancel</button>
                         <button type='submit' id='new-recipe-save-button'>Save</button>
 
                     </div> {/* End of right-section */}

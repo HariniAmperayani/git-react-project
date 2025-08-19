@@ -7,6 +7,8 @@ import Cookbook from './Cookbook';
 import Dashboard from './Dashboard';
 import NewRecipeLayout from './NewRecipeLayout';
 import ViewRecipes from './ViewRecipes';
+import RecipeDetails from './RecipeDetails';
+import EditRecipe from './EditRecipe';
 
 function MainContainer() 
 {
@@ -22,6 +24,10 @@ function MainContainer()
                     element={<PrivateRoute> <NewRecipeLayout/> </PrivateRoute>} />
             <Route path="/cookbook/view-recipes"
                     element={<PrivateRoute> <ViewRecipes/> </PrivateRoute>} />
+            <Route path="/cookbook/recipe-details/:id"
+                    element={<PrivateRoute> <RecipeDetails/> </PrivateRoute>} />
+            <Route path="/cookbook/edit-recipe/:id"
+                    element={<PrivateRoute> <EditRecipe/> </PrivateRoute>} />
             
         </Routes>
         </>

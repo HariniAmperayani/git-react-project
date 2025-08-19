@@ -1,3 +1,46 @@
+.toast-success {
+    position: fixed;
+    text-align: center;
+    top: 10px;
+    right: 45%;
+    background-color: white;
+    color: green;
+    border: 1px solid green;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    font-size: 14px;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+.toast-error {
+    position: fixed;
+    text-align: center;
+    top: 10px;
+    right: 45%;
+    background-color: white;
+    color: red;
+    border: 1px solid #f5c6cb;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    font-size: 14px;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
 .new-recipe-form{
     font-family: 'Inter', sans-serif;
     font-size : 13px;
@@ -22,9 +65,7 @@ label{
 input[type='text'] {     
   border: none;
   border-bottom: 1px solid black;
-  background: transparent;
-  /* outline: none; */
-  /* box-shadow: none; */
+  background: transparent;  
   border-radius: 0;
   padding: 4px 0;
   font-size: 13px;
@@ -43,7 +84,6 @@ input[type='text']:focus{
 }
 
 #new-recipe-title {
-    align-items: center;
     gap:10px;
     
 }
@@ -82,23 +122,6 @@ input[type='text']:focus{
     align-items: center;
 }
 
-/* #new-recipe-ingredients {
-    display: flex;  
-
-} */
-
-#instructions{
-  border: 1px solid black !important;
-  border-radius: 4px !important;
-  width : 100%;
-  max-width: 600px;
-  height: 400px;
-  padding: 10px;
-  background : transparent;
-  /* resize: vertical; */
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-}
 
 #new-recipe-servewith-visibility{
     display: flex;
@@ -115,4 +138,67 @@ input[type='text']:focus{
 
 #new-recipe-visibility-options{
     display : flex;
+    
 }
+#accesstype_public{
+    margin-right: 10px;
+}
+
+#public
+{
+    margin: 5px;
+}
+
+#private
+{
+    margin : 5px;
+}
+
+#instructions{
+  border: 1px solid black !important;
+  border-radius: 4px !important;
+  width : 100%;
+  max-width: 600px;
+  height: 400px;
+  padding: 10px;
+  background : transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+}
+
+
+#new-recipe-cancel-button{
+    background-color: white;
+    color: black;
+    margin-top : 10px;
+    border : 1px solid black;
+    padding : 5px;
+    background: white;
+    margin-right: 150px;
+    border-radius: 5px;
+}
+
+#new-recipe-save-button{
+    background-color: white;
+    color: black;
+    margin-top : 10px;
+    border : 1px solid black;
+    padding : 5px;
+    background: white;
+    border-radius: 5px;
+    font-weight : 500;
+    font-size: 14px;
+}
+
+#new-recipe-cancel-button:hover{
+    background-color: green;
+    color : white;
+    cursor : pointer;
+}
+
+#new-recipe-save-button:hover{
+    background-color: green;
+    color : white;
+    cursor : pointer;
+}
+

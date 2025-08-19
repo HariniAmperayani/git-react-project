@@ -25,14 +25,9 @@ function NewRecipeDesign()
                     <div className='col-xl-12'>
                     
                         <header className='newrecipelayout-header'>
-                        <div id = 'newrecipelayout-left-section'>
                             <nav className='navbar navbar-expand-lg'>
-                                <a className='navbar-brand newrecipelayout-navbar-brand' href='/cookbook'>H&M Cookbook</a>
-                            </nav>
-                        </div>
-                        <div id = 'newrecipelayout-right-section'>
-
-                        </div>
+                                <a className='navbar-brand newrecipelayout-navbar-brand' href='/cookbook/dashboard'>H&M Cookbook</a>
+                            </nav>                        
                         </header>
 
                     </div>

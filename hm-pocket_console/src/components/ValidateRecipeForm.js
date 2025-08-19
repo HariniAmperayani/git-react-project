@@ -1,65 +1,65 @@
-function ValidateRecipeForm(formData) 
+function ValidateRecipeForm(RecipeFormData) 
 {
   const verrors = {};
 
-  if (!formData.title.trim()) verrors.title = "This field is required";
+  if (!RecipeFormData.title.trim()) verrors.title = "This field is required";
 
-  if (!formData.cuisine.trim()) verrors.cuisine = "This field is required";
+  if (!RecipeFormData.cuisine.trim()) verrors.cuisine = "This field is required";
 
 
     // Validate image
-  if (!formData.image) 
+  if (!RecipeFormData.image) 
     {
         verrors.image = "This field is required";
     } 
-  else if (!formData.image.type.startsWith("image/")) 
+  else if (!RecipeFormData.image.type.startsWith("image/")) 
     {
         verrors.image = "File must be an image";
     }
 
 
     // Validate prepTime
-  if (!formData.prepTime.trim()) 
+  if (!RecipeFormData.prepTime.trim()) 
     {
         verrors.prepTime = "This field is required";
     } 
-    else if (isNaN(formData.prepTime) || Number(formData.prepTime) <= 0) 
+    else if (isNaN(RecipeFormData.prepTime) || Number(RecipeFormData.prepTime) <= 0) 
     {
         verrors.prepTime = "Prep time must be a positive number";
     }
 
 
     // Validate cookTime
-  if (!formData.cookTime.trim()) 
+  if (!RecipeFormData.cookTime.trim()) 
     {
         verrors.cookTime = "This field is required";
     } 
-  else if (isNaN(formData.cookTime) || Number(formData.cookTime) <= 0) 
+  else if (isNaN(RecipeFormData.cookTime) || Number(RecipeFormData.cookTime) <= 0) 
     {
         verrors.cookTime = "Cook time must be a positive number";
     }
 
 
     // Validate servings
-  if (!formData.servings.trim()) 
+  if (!RecipeFormData.servings.trim()) 
     {
         verrors.servings = "This field is required";
     } 
-  else if (isNaN(formData.servings) || Number(formData.servings) <= 0) {
+  else if (isNaN(RecipeFormData.servings) || Number(RecipeFormData.servings) <= 0) {
         verrors.servings = "Servings must be a positive number";
     }
 
 
     // Validate ingredients
-  if (!formData.ingredients || formData.ingredients.length === 0) {
+  if (!RecipeFormData.ingredients || RecipeFormData.ingredients.length === 0) {
     verrors.ingredients = "This field is required";
     }
 
     // Validate instructions
-  if (!formData.instructions.trim()) verrors.instructions = "This field is required";
+  if (!RecipeFormData.instructions.trim()) verrors.instructions = "This field is required";
 
     // Validate serveWith
-  if (!formData.serveWith.trim()) verrors.serveWith = "This field is required";
+  if (!RecipeFormData.serveWith.trim()) verrors.serveWith = "This field is required";
 
   
   return verrors;
