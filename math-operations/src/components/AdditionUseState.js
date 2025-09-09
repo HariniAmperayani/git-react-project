@@ -4,7 +4,7 @@ function AdditionUseState()
 {
     console.log("The addition component is called");
 
-    let [num3, setNum3] = useState('');
+    let [numS, setNumS] = useState('');
          
     function add()
     {
@@ -13,11 +13,11 @@ function AdditionUseState()
     
         console.log("The add button is clicked-update"); 
         
-        num3 = parseInt(num1) + parseInt(num2);
+        numx = parseInt(num1) + parseInt(num2);
         
-        console.log(num3);
-
-        setNum3(num3);
+        console.log(numx);
+        
+        setNumS(numx);
         
     };
     
@@ -35,7 +35,7 @@ function AdditionUseState()
             <button id='addbutton' onClick={add}> Add</button>
 
             <div>
-                <input type='text' id='textbox3' placeholder='Result' value={num3}/>
+                <input type='text' id='textbox3' placeholder='Result' value={numS}/>
             </div>
            
         </div>

@@ -1,0 +1,65 @@
+.container-fluid.pocket_console-container
+{
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    border : 1px solid green;
+
+}
+
+.main-content {
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div {
+    color: green;
+    margin-top: 50px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.slider {
+    width: 50%;
+    margin-top: 60px;
+    padding-right: 10px;  
+}
+
+.slider-inner {
+  display: flex;
+  gap: 12px;
+}
+
+.slider a {
+    text-decoration: none;
+    color: black;
+}
+
+.product-card {
+    width: 90%;
+    /* margin : 10px; */
+    background-color: #fdfdfd;
+    height: 70px;
+    font-size: 15px;
+    font-weight:450;
+    color: black;
+    border: 1px solid green;
+    border-radius: 10px;
+    text-align: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    
+}
+
+.product-card:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+

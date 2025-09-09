@@ -1,0 +1,6 @@
+{
+    "domain": "dev-hc1zvu3x.eu.auth0.com",
+    "clientId": "RVCtJOu8Vi4uSkV2cr1hjVxRqYwhZuOB",
+     "redirectUri": "https://127.0.0.1:3000/users",
+    "audience": "{yourApiIdentifier}"
+}

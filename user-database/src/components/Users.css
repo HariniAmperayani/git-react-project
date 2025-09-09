@@ -1,0 +1,20 @@
+.container-fluid.custom-users-container
+{
+    background: black;
+}
+li
+{
+    list-style-type: none;
+}
+
+.custom-users-button
+{
+    border: none;
+    background-color: white;
+
+}
+.bi-info-circle.custom-iIcon
+{
+    color : blue;
+    float : left;
+}

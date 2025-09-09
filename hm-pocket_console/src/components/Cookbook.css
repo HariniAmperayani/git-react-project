@@ -1,0 +1,71 @@
+.container-fluid.cookbook-homepage{
+    border: 1px solid green;
+    height : 100vh;
+    
+}
+.cookbook-header{
+    display:flex;
+    justify-content: space-between;
+    padding : 10px;
+}
+.navbar-brand.cookbook-navbar-brand{
+    font-size:20px;
+    color: green;
+    font-weight: 500;
+}
+
+.navbar-brand.cookbook-navbar-brand:hover{
+    color: green !important;
+    text-decoration: none;
+}
+
+.navbar-nav.cookbook-navbar-nav {
+    list-style-type: none;
+    margin-left: 30px;
+}
+
+.nav-item.cookbook-item{
+    font-size: 15px;
+    font-weight: 450;
+
+}
+
+.nav-link.cookbook-nav-link {
+    color : green !important; 
+}
+
+.nav-link.cookbook-nav-link:hover{
+    color: green !important;
+    text-decoration: underline green !important;
+    
+}
+
+#cookbook-login-button, #cookbook-logout-button{
+    background-color: white;
+    color : green;
+    border : 2px solid green;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top : 10px;
+    margin-right : 10px;
+    font-weight: 500;
+    font-size: 15px;
+
+}
+
+#cookbook-login-button :hover, #cookbook-logout-button:hover{
+    background-color: green;
+    color : white;
+}
+
+#cookbook-welcome-message, #cookbook-logout-message{
+    font-size:20px;
+    color:green;
+    font-weight: 450;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin-top: 65px;
+}

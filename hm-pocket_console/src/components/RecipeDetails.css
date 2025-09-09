@@ -1,0 +1,63 @@
+.container-fluid.recipe-details-container{
+    height : 100vh;
+    border : 1px solid green;
+}
+
+.navbar-brand.recipe-details--navbar-brand{
+    font-size:20px;
+    color: green;
+    font-weight: 500;
+}
+
+#top-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+#headline{
+    
+    color: green;
+    margin-left : 600px;
+    
+}
+
+#recipe-actions{
+    display: flex;
+    
+}
+
+#edit-button, #delete-button{
+    background-color: white;
+    color : green;
+    border : 2px solid green;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top : 10px;
+    margin-right : 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#grouped-sections{
+    display: flex;
+}
+
+#left-section{
+    border : 1px solid green;
+}
+
+img{
+max-width: 100%; 
+height: auto;
+border-radius: 8px;
+margin-bottom: 1rem;
+}
+
+#right-section{
+    margin-top : 20px;
+    padding: 10px;
+}
+
+
+
