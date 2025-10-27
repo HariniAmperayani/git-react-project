@@ -24,8 +24,8 @@ function RecipeDetails()
                 scope: 'read:current_user'
           });
 
-          //Make an API call to fetch recipes
-          const response = await fetch('https://localhost:4000/api/recipes', {
+          //Make an API call to fetch recipes by ID
+          const response = await fetch(`https://localhost:4000/api/recipes/${id}`, {
                 method: 'GET',
                 headers: {
                         'Authorization': `Bearer ${token}`,
@@ -38,12 +38,8 @@ function RecipeDetails()
           //Parse the response data
           const data = await response.json();
           console.log('Fetched recipes:', data); 
-
-          //Find the specific recipe by ID
-          const specificRecipe = data.find(recipe => recipe.id === Number(id));
-              if (specificRecipe) setRecipe(specificRecipe);
-              else setRecipe({ error: 'Recipe not found' });
-
+          setRecipe(data);
+          
       } 
 
       catch (error) 
@@ -80,7 +76,7 @@ function RecipeDetails()
           const response = await fetch(`https://localhost:4000/api/recipes/${id}`, {
                 method: 'DELETE',
                 headers: {
-                Authorization: `Bearer ${token}`,
+                  Authorization: `Bearer ${token}`,
                 },
             });
 
